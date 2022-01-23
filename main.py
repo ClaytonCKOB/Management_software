@@ -1,15 +1,39 @@
+from cgitb import text
+from turtle import width
 from connDatabase import *
-from tkinter import * 
+import tkinter as tk
 
-i = 0
+def onClick():
+    name = eUser.get()
+    password = ePass.get()
+    status = loginVerification(name, password)
+    msg = ""
+    
+    if  status == 0:
+        msg = "Wrong password"
+    else: msg = "Login accepted"
 
-while i == 0:
-    print("Insert your username: ")
-    name = input()
-    print("Insert your password: ")
-    password = input()
-    i = login(name, password)
+    warning = tk.Label(root, text=msg)
+    warning.grid(column=1, row=3)
 
-print("Login accepted")
+root = tk.Tk()
+
+window = tk.Canvas(root, width=300, height=200)
+window.grid(columnspan=3, pady=0, padx=0)
+
+tUser = tk.Label(root, text="Login: ")
+eUser = tk.Entry(root, width=30)
+tPass = tk.Label(root, text="Password: ")
+ePass = tk.Entry(root, width=30)
+mainBtn = tk.Button(root, text="Submit", command=onClick)
+
+tUser.grid(column=0, row=0, pady=5)
+eUser.grid(column=1, row=0)
+tPass.grid(column=0, row=1, pady=10)
+ePass.grid(column=1, row=1)
+mainBtn.grid(column=1, row=2, pady=10)
+
+root.mainloop()
+
 
 

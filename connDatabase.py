@@ -1,6 +1,6 @@
 import pyodbc
 
-def login(name, password):
+def loginVerification(name, password):
     con_string = r'DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=C:\Users\clayt\OneDrive\Documentos\integration_python_and_MS-Access\database\login.accdb;'
     conn = pyodbc.connect(con_string)
 
