@@ -1,7 +1,7 @@
 import pyodbc
 
 def loginVerification(name, password):
-    con_string = r'DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=C:\Users\clayt\OneDrive\Management_software\database\login.accdb;'
+    con_string = r'DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=C:\Users\clayt\OneDrive\Documentos\Management_software\database\login.accdb;'
     conn = pyodbc.connect(con_string)
 
     cursor = conn.cursor()

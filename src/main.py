@@ -1,4 +1,4 @@
-from src.connDatabase import *
+from connDatabase import *
 import tkinter as tk
 
 def onClick():
@@ -7,9 +7,9 @@ def onClick():
     status = loginVerification(name, password)
     msg = ""
     
-    if  status == 0:
-        msg = "Wrong password"
-    else: msg = "Login accepted"
+    if  status == 1:
+        msg = "Login accepted"
+    else: msg = "Wrong Password"
 
     warning = tk.Label(root, text=msg)
     warning.grid(column=1, row=3)
