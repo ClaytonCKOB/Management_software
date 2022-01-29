@@ -1,6 +1,4 @@
-from cgitb import text
-from turtle import width
-from connDatabase import *
+from src.connDatabase import *
 import tkinter as tk
 
 def onClick():
