@@ -1,4 +1,4 @@
-from connDatabase import *
+from classes.connDatabase import *
 import tkinter as tk
 
 def onClick():
