@@ -1,4 +1,7 @@
+from cProfile import label
 import tkinter as tk
+
+
 
 class login(tk.Tk):
     def __init__(self):
@@ -7,6 +10,11 @@ class login(tk.Tk):
         #Login window configuration
         self.title("Login")
         self.geometry("490x560+440+70")
+        self.iconbitmap(default='images\\icon.ico')
+
+        #Background
+        bg_image = tk.PhotoImage(file="images\\user.png")
+ 
 
         #Label
         self.tUser = tk.Label(self, text="Login: ")
@@ -14,8 +22,10 @@ class login(tk.Tk):
         
         #Entry
         self.eUser = tk.Entry(self, width=30)
+        self.eUser.place(width=300, height=50, x=50, y=100)
         self.ePass = tk.Entry(self, width=30)
-        
+        self.ePass.place(width=300, height=50, x=50, y=160)
+
         #Button
         self.mainBtn = tk.Button(self, text="Submit")
 
